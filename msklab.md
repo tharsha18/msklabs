@@ -7,6 +7,34 @@ https://amazonmsk-labs.workshop.aws/en/msklambda/setup.html
 
 Lets verify connectivity to your cluster and describe cluster. To run describe command, you will need the MSK cluster Arn which can be obtained using these steps. AWS Console --> MSK (Search msk under services)--> Clusters --> YourClusterName --> Details tab --> General (click the two little squares to copy)
 
+*aws kafka describe-cluster --region us-east-1 --cluster-arn "YourClusterArn"*
+
+Output of the above command should look similar to below. Take a few minutes ro review it. 
+
+`{
+    "ClusterInfo": {
+        "BrokerNodeGroupInfo": {
+            "BrokerAZDistribution": "DEFAULT",
+            "ClientSubnets": [
+                "subnet-0ded0d3ee0ca01808",
+                "subnet-0d92bffb39d24a289",
+                "subnet-0c3818153bf4074bd"
+            ],
+            "InstanceType": "kafka.m5.large",
+            "SecurityGroups": [
+                "sg-048707eebd805819f",
+                "sg-0d8bf192dd6579b58"
+            ],
+            "StorageInfo": {
+                "EbsStorageInfo": {
+                    "VolumeSize": 100
+                }
+            }
+            ..
+            ..
+            ..`
+            
+
 ## Produce messages to MSK Topic
 1. On your AWS console, search for "cloud9" and click on the service. It should take you to a landing page with MSKClient as seen in screenshot below. 
 
