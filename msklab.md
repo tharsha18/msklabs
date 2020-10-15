@@ -2,7 +2,7 @@
 This lab helps you learn how to publish messages to a Kafka topic in MSK and consume them using AWS SDK using AWS Cloud9 CLI. Please complete the following pre-requisites in preperation to the lab,
 
 ## Pre-Requisite (Skip)
-Create and setup a new MSK cluster using the twho cloud formation templates in the workshop link below. 
+Create and setup a new MSK cluster using the two cloud formation templates in the workshop link below. 
 https://amazonmsk-labs.workshop.aws/en/msklambda/setup.html
 
 ## Connect to Kafka Client Machine using ssh and Cloud9
