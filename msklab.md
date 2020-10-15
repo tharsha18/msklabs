@@ -51,6 +51,7 @@ Output of the above command should look similar to below. Take a few minutes ro 
 ## Produce messages to MSK Topic
 
 1. First step to produce a message is to create a topic using the command below.
+
 */home/ec2-user/kafka241/bin/kafka-topics.sh  --create --zookeeper ReplaceWithYourZookeeperConnectString --replication-factor 3 --partitions 1 --topic AWSKafkaTutorialTopic*
 
 Zookeeper connectrion string can be found at, AWS Console --> MSK--> click on ClusterName --> Details Tab, Click View client information --> Scroll down for Zookeeper Connection (click the two squares to copy)
