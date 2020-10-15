@@ -58,11 +58,11 @@ Zookeeper connectrion string can be found at, AWS Console --> MSK--> click on Cl
 
 2. To publish messages using CLI, run the following command replacing the broker connection string.
 
-*/home/ec2-user/kafka241/bin/kafka-console-producer.sh --broker-list ReplaceWithYourBootstrapBrokerStringTls --topic AWSKafkaTutorialTopic*
+*/home/ec2-user/kafka241/bin/kafka-console-producer.sh --broker-list ReplaceWithYourBootstrapBrokerStringTls --topic AWSKafkaTutorialTopic --property parse.key=true --property key.separator=":"*
 
 Broker bootstrap string can be found at, AWS Console --> MSK--> click on ClusterName --> Details Tab, Click View client information --> Bootsrap servers --> Plaintext (click the two squares to copy)
 
-Enter the following message payload in your command prompt.
+Enter the following message payload in your command prompt either one line at a time or all together..
 ```
 key1:the lazy
 key2:fox jumped
@@ -77,3 +77,17 @@ key2:Go to
 key3:Kafka
 key4:summit
 ```
+3. Now you have successfully published a message. Hit Ctrl+C to exit
+
+## Consume messages from an MSK Topic
+1. Run the command below to consume messages from the Kafka topic. Notice the end of the command that reads all messages from the beginning. 
+
+*/home/ec2-user/kafka241/bin/kafka-console-consumer.sh --bootstrap-server ReplaceWithYourBootstrapBrokerStringTls--topic AWSKafkaTutorialTopic --from-beginning --property print.key=true --property key.separator=":"*
+
+Broker bootstrap string can be found at, AWS Console --> MSK--> click on ClusterName --> Details Tab, Click View client information --> Bootsrap servers --> Plaintext (click the two squares to copy)
+
+2. You should see the exact messages that you sent earlier and you will also notice the order of the messages preserved as you are only using 1 partition. Now, hit Ctrl+C to exit and it will tell the number of messages processed. 
+
+3. It is a best practice for consumers to keep track of the message positions by partition that they processed which is called offset. Consumers, request reading messages from a specific offset to resume from where they left off. Lets assume you have read 10 messages earlier and need to read the rest. Use the command below to read the rest of the messages. 
+
+*/home/ec2-user/kafka241/bin/kafka-console-consumer.sh --bootstrap-server ReplaceWithYourBootstrapBrokerStringTls--topic AWSKafkaTutorialTopic --property print.key=true --property key.separator=":" --partition 0 --offset 10*
