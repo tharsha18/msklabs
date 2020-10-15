@@ -91,3 +91,7 @@ Broker bootstrap string can be found at, AWS Console --> MSK--> click on Cluster
 3. It is a best practice for consumers to keep track of the message positions by partition that they processed which is called offset. Consumers, request reading messages from a specific offset to resume from where they left off. Lets assume you have read 10 messages earlier and need to read the rest. Use the command below to read the rest of the messages. 
 
 */home/ec2-user/kafka241/bin/kafka-console-consumer.sh --bootstrap-server ReplaceWithYourBootstrapBrokerStringTls--topic AWSKafkaTutorialTopic --property print.key=true --property key.separator=":" --partition 0 --offset 10*
+
+4. You should see only 2 messages.
+
+Congratulations!!! You have successfully completed this lab!!! YOu have learned how to create a topic, publish and consume messages from a Kafka Topic.
