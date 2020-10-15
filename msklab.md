@@ -58,6 +58,22 @@ Zookeeper connectrion string can be found at, AWS Console --> MSK--> click on Cl
 
 2. To publish messages using CLI, run the following command replacing the broker connection string.
 
-*/home/ec2-user/kafka241/bin/kafka-console-producer.sh --broker-list ReplaceWithYourBootstrapBrokerStringTls --producer.config client.properties --topic AWSKafkaTutorialTopic*
+*/home/ec2-user/kafka241/bin/kafka-console-producer.sh --broker-list ReplaceWithYourBootstrapBrokerStringTls --topic AWSKafkaTutorialTopic*
 
 Broker bootstrap string can be found at, AWS Console --> MSK--> click on ClusterName --> Details Tab, Click View client information --> Bootsrap servers --> Plaintext (click the two squares to copy)
+
+Enter the following message payload in your command prompt.
+```
+key1:the lazy
+key2:fox jumped
+key3:over the
+key4:brown cow
+key1:All
+key2:streams
+key3:lead
+key4:to
+key1:Kafka
+key2:Go to
+key3:Kafka
+key4:summit
+```
