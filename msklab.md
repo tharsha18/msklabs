@@ -50,10 +50,13 @@ Output of the above command should look similar to below. Take a few minutes ro 
 
 ## Produce messages to MSK Topic
 
-1. First step to produce a message is to create a topic using the command below.
+1. First step to produce a message is to create a topic using the command below replacing the Zookeeper connection string.
 
 */home/ec2-user/kafka241/bin/kafka-topics.sh  --create --zookeeper ReplaceWithYourZookeeperConnectString --replication-factor 3 --partitions 1 --topic AWSKafkaTutorialTopic*
 
 Zookeeper connectrion string can be found at, AWS Console --> MSK--> click on ClusterName --> Details Tab, Click View client information --> Scroll down for Zookeeper Connection (click the two squares to copy)
 
-2. 
+2. To publish messages using CLI, run the following command replacing the broker connection string.
+*/ec2-user/kafka241/bin/kafka-console-producer.sh --broker-list ReplaceWithYourBootstrapBrokerStringTls --producer.config client.properties --topic AWSKafkaTutorialTopic*
+
+Broker bootstrap string can be found at, AWS Console --> MSK--> click on ClusterName --> Details Tab, Click View client information --> Bootsrap servers --> Plaintext (click the two squares to copy)
