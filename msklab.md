@@ -12,8 +12,8 @@ https://amazonmsk-labs.workshop.aws/en/msklambda/setup.html
 
 2. Using cloud9, connect to Kafka client EC2 instance via ssh using steps below (Skip)
 
-    a. use the ec2 keypair pem file you downloaded during pre-requisite and open it in a text editor.
-    b. Select everything in the file (Ctrl+A) and copy.
+    a. use the ec2 keypair pem file you downloaded during pre-requisite and open it in a text editor.\
+    b. Select everything in the file (Ctrl+A) and copy.\
     c. In the cloud9 console, type "vi keyfile.pem" and hit enter.
     d. Paste the contents you saved and save the file.
     e. chmod 600 keyfile.pem
