@@ -8,7 +8,7 @@ https://amazonmsk-labs.workshop.aws/en/msklambda/setup.html
 ## Connect to Kafka Client Machine using ssh and Cloud9
 1. On your AWS console, search for "cloud9" and click on the service. Then click on Open IDE. It should take you to a landing page with MSKClient as seen in screenshot below. 
 
-![screenshot](img/picture1.jpg)
+![screenshot](picture1.jpg)
 
 2. Using cloud9, connect to Kafka client EC2 instance via ssh using steps below (Skip)
     a. use the ec2 keypair pem file you downloaded during pre-requisite and open it in a text editor.
