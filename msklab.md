@@ -1,7 +1,7 @@
 # Produce and Consume messages from MSK topic using AWS SDK CLI
 This lab helps you learn how to publish messages to a Kafka topic in MSK and consume them using AWS SDK using AWS Cloud9 CLI. Please complete the following pre-requisites in preperation to the lab,
 
-## Pre-Req
+## Pre-Requisite (Skip)
 Create and setup a new MSK cluster using the twho cloud formation templates in the workshop link below. 
 https://amazonmsk-labs.workshop.aws/en/msklambda/setup.html
 
@@ -10,8 +10,15 @@ https://amazonmsk-labs.workshop.aws/en/msklambda/setup.html
 
 ![screenshot](img/picture1.jpg)
 
+2. Using cloud9, connect to Kafka client EC2 instance via ssh using steps below (Skip)
+    a. use the ec2 keypair pem file you downloaded during pre-requisite and open it in a text editor.
+    b. Select everything in the file (Ctrl+A) and copy.
+    c. In the cloud9 console, type "vi keyfile.pem" and hit enter.
+    d. Paste the contents you saved and save the file.
+    e. chmod 600 keyfile.pem
+    f. ssh -i keyfile.pem ec2-user@<Hostname_of_ec2_instance_seen_in_CF_stack_named_MSK_with_key_name_SSHKafkaClientEC2Instance>
 
-Lets verify connectivity to your cluster and describe cluster. To run describe command, you will need the MSK cluster Arn which can be obtained using these steps. AWS Console --> MSK (Search msk under services)--> Clusters --> YourClusterName --> Details tab --> General (click the two little squares to copy)
+Now, lets verify connectivity to your cluster and describe cluster. To run describe command, you will need the MSK cluster Arn which can be obtained using these steps. AWS Console --> MSK (Search msk under services)--> Clusters --> YourClusterName --> Details tab --> General (click the two little squares to copy)
 
 *aws kafka describe-cluster --region us-east-1 --cluster-arn "YourClusterArn"*
 
