@@ -11,12 +11,15 @@ https://amazonmsk-labs.workshop.aws/en/msklambda/setup.html
 ![screenshot](picture1.jpg)
 
 2. Using cloud9, connect to Kafka client EC2 instance via ssh using steps below (Skip)
+
     a. use the ec2 keypair pem file you downloaded during pre-requisite and open it in a text editor.
     b. Select everything in the file (Ctrl+A) and copy.
     c. In the cloud9 console, type "vi keyfile.pem" and hit enter.
     d. Paste the contents you saved and save the file.
     e. chmod 600 keyfile.pem
-    f. ssh -i keyfile.pem ec2-user@<Hostname_of_ec2_instance_seen_in_CF_stack_named_MSK_with_key_name_SSHKafkaClientEC2Instance>
+    
+3. Lets connect to your Kafka client machine using the command below
+*ssh -i keyfile.pem ec2-user@<Hostname_of_ec2_instance_seen_in_CF_stack_named_MSK_with_key_name_SSHKafkaClientEC2Instance>*
 
 Now, lets verify connectivity to your cluster and describe cluster. To run describe command, you will need the MSK cluster Arn which can be obtained using these steps. AWS Console --> MSK (Search msk under services)--> Clusters --> YourClusterName --> Details tab --> General (click the two little squares to copy)
 
